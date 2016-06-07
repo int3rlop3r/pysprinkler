@@ -36,7 +36,7 @@ class TaskDispatcher:
             for job in self._started_jobs:
                 job.close()
 
-class Demultiplexer:
+class Sprinkler:
 
     def __init__(self, tasks=None):
         self.task_dispatcher = TaskDispatcher(tasks)

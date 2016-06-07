@@ -1,9 +1,12 @@
-Demuxor
-========
+Sprinkler
+=========
 A small python library that helps you write co-routines
-in an event-driven way.
+in an event-driven way. In short it 'sprinkles' data passed
+to the '.send' function call to all sub-classes of 'Task'.
 
 A simple example on how to use the Demultiplexer:
+
+    import sprinkler
 
     class RemoteDBHandler(Task):
     
@@ -43,14 +46,14 @@ A simple example on how to use the Demultiplexer:
     ldb_handler = LocalDBHandler()
     stn_handler = STNHandler()
 
-    muxer = Demultiplexer([rdb_handler, ldb_handler, stn_handler])
-    muxer.start()
+    s = Sprinkler([rdb_handler, ldb_handler, stn_handler])
+    s.start()
 
     lines = ["Line 1", "Line 2", "Line 3", "Line 4", "Line 5"]
     for line in lines:
-        # sends lines to all 'Task' classes
-        muxer.send(line)
-    muxer.close()
+        # sprinkle lines to all 'Task' classes
+        s.send(line)
+    s.close()
 
 Output:
 
