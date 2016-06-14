@@ -1,5 +1,5 @@
-Sprinkler
-=========
+pysprinkler
+===========
 A small python library that helps you write co-routines
 in an event-driven way. In short it 'sprinkles' data passed
 to the '.sprinkle' function to all sub-classes of 'Task' in
