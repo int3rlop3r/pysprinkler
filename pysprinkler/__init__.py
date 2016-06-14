@@ -49,7 +49,7 @@ class Sprinkler:
         next(self.task_loop)
         return self
 
-    def send(self, data):
+    def sprinkle(self, data):
         self.task_loop.send(data)
 
     def close(self):
@@ -63,8 +63,4 @@ class Task:
                 self.on_data(data)
         except GeneratorExit, e:
             self.on_end()
-
-if __name__ == '__main__':
-    pass
-
 

@@ -5,10 +5,6 @@ in an event-driven way. In short it 'sprinkles' data passed
 to the '.sprinkle' function to all sub-classes of 'Task' in
 a round robin manner.
 
-Install:
-
-    pip install pysprinkler
-
 A simple example:
 
     from pysprinkler import Task, Sprinkler
